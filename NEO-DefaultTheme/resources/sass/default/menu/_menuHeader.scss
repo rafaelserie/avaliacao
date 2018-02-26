@@ -1,0 +1,140 @@
+$menuBG: $primary-color;
+$menuTextColor: #fff;
+$menuTextColor2: #000;
+$menuHeight: 45px;
+$menuHoverBorderColor: $secondary-color;
+
+.menuheader {
+  background-color: $menuBG;
+  min-height: $menuHeight;
+  width: 100%;
+
+  #wsnavtoggle {
+    display: none;
+    vertical-align: top;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 1;
+    text-align: center;
+    i, span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    i {
+      width: auto;
+      height: auto;
+      margin-right: 5px;
+      &:before{
+        font-size: 1.8rem;
+        line-height: 1;
+        color: #fff;
+      }
+    }
+    span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    @media screen and (max-width: $mobile-bp){
+      display: inline-block;
+    }
+  }
+
+  .wsmain {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin: 0;
+    @media screen and (max-width: $mobile-bp){
+      display: none;
+      &.active {
+        display: inline-block;
+      }
+    }
+  }
+  
+  @media screen and (min-width: 920px) {
+    ul > li:hover{
+      > ul {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  /*Sub Classes*/
+  .ui.menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    font-weight: 400;
+    background: transparent;
+    background-color: transparent;
+    border: 0px;
+    box-shadow: none;
+    li {
+      position: relative;
+    }
+    ul {
+      display: none;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      li, a {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        padding: 5px 10px;
+        color: $menuTextColor2;
+      }
+    }
+    > li {
+      > a {
+        color: $menuTextColor;
+      }
+    }
+
+    @media screen and (min-width: 920px) {
+      display: block;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      > li {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        //position: relative;
+        > a {
+          height: $menuHeight;
+          &:before {
+            display: none;
+          }
+        }
+        ul {
+          position: absolute;
+          text-align: center;
+          border: 1px solid $primary-color;
+          background-color: #fff;
+          z-index: 100;
+        }
+        .categories-l2 {
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 180px;
+        }
+        .categories-l3 {
+          top: -1px;
+          left: 100%;
+        }
+      }
+    }
+  }
+}
+/* Mega Menu Start */
+//@import "wsmenu/style";
+/* MegaMenu End */

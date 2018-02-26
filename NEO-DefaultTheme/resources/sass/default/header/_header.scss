@@ -1,0 +1,80 @@
+topbar,
+headlogo {
+  width: 100%;
+}
+
+.logo{
+  max-height: 80px;
+}
+
+._header {
+  margin-top: 0px;
+  background: #fff url(/assets/images/common/bg-header.jpg) repeat-x center top;
+
+  &.fixed{
+    box-shadow: rgba(0,0,0,.3) 0px 0px 10px 0px;
+  }
+
+  .ui.container {
+    padding-top: 0px !important;
+    padding-bottom: 10px !important;
+  }
+
+  i.circular.icon {
+    box-shadow: none;
+  }
+
+  .ui.floating.label {
+    top: 0.8em;
+    left: 105%;
+  }
+
+  #searchbox.searchcolumn {
+    .input {
+      margin: 0;
+      .prompt {
+        height: 44px;
+        padding: 0 15px;
+        line-height: 44px;
+        border-color: #ccc;
+        border-radius: 0.28571429rem;
+      }
+    }
+    .search.icon{
+      opacity: 1;
+      cursor: pointer;
+      &:before {
+        font-size: 1.6rem;
+      }
+      &:hover{
+        opacity: 1;
+      }
+    }
+    @media screen and (max-width: $mobile-bp){
+      width: 100% !important;
+      margin-top: 15px;
+      order: 1;
+    }
+  }
+
+  .cartbutton {
+    .ui.basic.primary.button {
+      .icon {
+        width: auto;
+        height: auto;
+        margin: 0;
+        &:before{
+          font-size: 1.6rem;
+          line-height: 1;
+        }
+      }
+      > span {
+        display: none;
+        @media screen and (max-width: $mobile-bp){
+          display: none;
+        }
+      }
+    }
+  }
+
+}

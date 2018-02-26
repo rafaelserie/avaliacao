@@ -1,0 +1,29 @@
+.banner-master, .car-banners {
+	img {
+		margin: 0 !important;
+	}
+	.slick-dots {
+		> li {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 2px;
+			button {
+				width: 15px;
+				height: 15px;
+				margin: 0;
+				padding: 0;
+				border-radius: 50%;
+				border: 2px solid $primary-color;
+				background: $primary-color;
+				&:before {
+					display: none;
+				}
+			}
+			&.slick-active{
+				button {
+					background: $secondary-color;
+				}
+			}
+		}
+	}
+}

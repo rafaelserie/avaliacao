@@ -1,0 +1,54 @@
+﻿@model List<DomainProduct.Entities.Category>
+
+<div class="ui container fluid menuheader">
+	<div class="overlapblackbg"></div>
+	<div class="ui container">
+		<a id="wsnavtoggle" class="animated-arrow">
+			<i class="list icon"></i>
+			<span>Categorias</span>
+		</a>
+		<div class="wsmain">
+			<nav class="wsmenu">
+				<ul class="mobile-sub wsmenu-list ui menu">
+					@foreach (DomainProduct.Entities.Category category in Model) {
+						if (category.Level.Length == 2)
+						{<li>
+								<a href="@category.UrlFriendly" class="item">
+									<span class="text">@category.Name</span>
+									@if (category.ChildCategories != null && category.ChildCategories.Any()) {
+										<i class="dropdown icon"></i>
+									}
+								</a>
+								@if (category.ChildCategories != null && category.ChildCategories.Any()) {
+									<ul class="categories-l2">
+										@if (category.ChildCategories != null && category.ChildCategories.Any()) {
+											foreach (DomainProduct.Entities.Category subCategoryLevel1 in category.ChildCategories) {
+												<li>
+													<a href="@subCategoryLevel1.UrlFriendly">@subCategoryLevel1.Name</a>
+													@if (subCategoryLevel1.ChildCategories != null && subCategoryLevel1.ChildCategories.Any()) {
+														<ul class="categories-l3">
+															@if (subCategoryLevel1.ChildCategories != null && subCategoryLevel1.ChildCategories.Any()) {
+																foreach (var subCategoryLevel2 in subCategoryLevel1.ChildCategories) {
+																	<a class="item" href="@subCategoryLevel2.UrlFriendly">@subCategoryLevel2.Name</a>
+																}
+															}
+														</ul>
+													}
+												</li>
+											}
+										}
+									</ul>
+								}
+							</li>}
+						else
+						{
+							<li>
+								<a class="item" href="~/category/index/@category.IdCategory"><span>@category.Name</span></a>
+							</li>
+						}
+					}
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
